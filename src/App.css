@@ -8,7 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 
 .form {
@@ -40,4 +39,21 @@
 .btn:hover {
   cursor: pointer;
   background-color: white;
+}
+
+.select {
+  font-size: 20px;
+  text-align: center;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  font-size: 24px;
+  border: 1px solid yellowgreen;
+  padding: 20px 30px;
+  border-radius: 5px;
+  width: 180px;
 }

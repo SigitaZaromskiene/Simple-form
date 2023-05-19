@@ -47,7 +47,7 @@ function Form({ name, surname, time, setName, setSurname, setTime }) {
               value={surname}
             ></input>
           </div>
-          <select value={time} onChange={timeHandler}>
+          <select className="select" value={time} onChange={timeHandler}>
             <option>Monday</option>
             <option>Tuesday</option>
             <option>Wednesday</option>

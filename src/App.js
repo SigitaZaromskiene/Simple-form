@@ -18,8 +18,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Please make doctor's appointment</h1>
-      <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+      <h1 style={{ margin: "50px" }}>Please make doctor's appointment</h1>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "20px",
+          marginBottom: "50px",
+        }}
+      >
         <Form
           name={name}
           setName={setName}
