@@ -54,6 +54,28 @@ function Form({ name, surname, time, setName, setSurname, setTime }) {
             <option>Thursday</option>
             <option>Friday</option>
           </select>
+          <div
+            className="grid-el"
+            style={{
+              display: "flex",
+              gap: "50px",
+              alignItems: "center",
+            }}
+          >
+            <h3>Purpose</h3>
+            <div className="sm">
+              <label htmlFor="ill">Illness</label>
+              <input id="ill" type="checkbox" />
+            </div>
+            <div className="sm">
+              <label htmlFor="pre">Prescription</label>
+              <input id="pre" type="checkbox" />
+            </div>
+            <div className="sm">
+              <label htmlFor="other">Other</label>
+              <input id="other" type="checkbox" />
+            </div>
+          </div>
         </div>
       </form>
     </>
