@@ -6,6 +6,7 @@ function List({ list }) {
           <p>{li.name}</p>
           <p>{li.surname}</p>
           <p> {li.time}</p>
+          <p> {li.purpose}</p>
         </div>
       ))}
     </ul>

@@ -7,13 +7,15 @@ function App() {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [time, setTime] = useState("");
+  const [purpose, setPurpose] = useState("");
   const [list, setList] = useState([]);
 
   const formHandler = () => {
-    setList((li) => [...li, { name, surname, time }]);
+    setList((li) => [...li, { name, surname, time, purpose }]);
     setSurname("");
     setTime("");
     setName("");
+    setPurpose("");
   };
 
   return (
@@ -35,6 +37,8 @@ function App() {
           time={time}
           setList={setList}
           setTime={setTime}
+          purpose={purpose}
+          setPurpose={setPurpose}
         />
         <button className="btn" onClick={formHandler}>
           Submit

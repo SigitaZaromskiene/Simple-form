@@ -1,4 +1,19 @@
-function Form({ name, surname, time, setName, setSurname, setTime }) {
+const checkBox = [
+  { text: "Prescription", value: "pre" },
+  { text: "Sickness", value: "sc" },
+  { text: "Other", value: "oth" },
+];
+
+function Form({
+  name,
+  surname,
+  time,
+  setName,
+  setSurname,
+  setTime,
+  setPurpose,
+  purpose,
+}) {
   const nameHandler = (e) => {
     setName(e.target.value);
   };
@@ -10,6 +25,8 @@ function Form({ name, surname, time, setName, setSurname, setTime }) {
   const timeHandler = (e) => {
     setTime(e.target.value);
   };
+
+  const purposeHandler = (e) => setPurpose(e.target.value);
 
   return (
     <>
@@ -63,18 +80,12 @@ function Form({ name, surname, time, setName, setSurname, setTime }) {
             }}
           >
             <h3>Purpose</h3>
-            <div className="sm">
-              <label htmlFor="ill">Illness</label>
-              <input id="ill" type="checkbox" />
-            </div>
-            <div className="sm">
-              <label htmlFor="pre">Prescription</label>
-              <input id="pre" type="checkbox" />
-            </div>
-            <div className="sm">
-              <label htmlFor="other">Other</label>
-              <input id="other" type="checkbox" />
-            </div>
+            {checkBox.map((ch) => (
+              <div className="sm" onClick={purposeHandler}>
+                <label htmlFor="ill">{ch.text}</label>
+                <input value={ch.text} id="ill" type="checkbox" />
+              </div>
+            ))}
           </div>
         </div>
       </form>
