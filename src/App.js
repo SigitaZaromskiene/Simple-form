@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Form from "./Components/Form";
+import List from "./Components/List";
+import { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [time, setTime] = useState("");
+  const [list, setList] = useState([]);
+
+  const formHandler = () => {
+    setList((li) => [...li, { name, surname, time }]);
+    setSurname("");
+    setTime("");
+    setName("");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Please make doctor's appointment</h1>
+      <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <Form
+          name={name}
+          setName={setName}
+          surname={surname}
+          setSurname={setSurname}
+          time={time}
+          setList={setList}
+          setTime={setTime}
+        />
+        <button className="btn" onClick={formHandler}>
+          Submit
+        </button>
+      </div>
+      <List list={list} />
     </div>
   );
 }
