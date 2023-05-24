@@ -82,7 +82,9 @@ function Form({
             <h3>Purpose</h3>
             {checkBox.map((ch) => (
               <div className="sm" onClick={purposeHandler}>
-                <label htmlFor="ill">{ch.text}</label>
+                <label htmlFor="ill" value={purpose}>
+                  {ch.text}
+                </label>
                 <input value={ch.text} id="ill" type="checkbox" />
               </div>
             ))}
